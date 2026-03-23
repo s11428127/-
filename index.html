@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>台股零股新手村：小資下單冒險</title>
+    <meta name="description" content="專為只能買零股的小資族設計，用遊戲關卡學會零股下單與基本術語。" />
+    <meta name="theme-color" content="#e45b2f" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="台股零股新手村：小資下單冒險" />
+    <meta property="og:description" content="給零股新手的互動式教學網站，透過遊戲關卡學習下單流程。" />
+    <meta property="og:image" content="assets/og-cover.svg" />
+    <meta property="og:locale" content="zh_TW" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="台股零股新手村：小資下單冒險" />
+    <meta name="twitter:description" content="遊戲化學習台股零股買進流程，含模擬下單機與術語教學。" />
+    <meta name="twitter:image" content="assets/og-cover.svg" />
+    <link rel="stylesheet" href="style.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "台股零股新手村：小資下單冒險",
+        "inLanguage": "zh-Hant",
+        "description": "專為只能買零股的小資族設計，用遊戲關卡學會零股下單與基本術語。"
+      }
+    </script>
+  </head>
+  <body>
+    <div class="bg-shape shape-a"></div>
+    <div class="bg-shape shape-b"></div>
+    <div class="bg-shape shape-c"></div>
+
+    <main class="game-wrap">
+      <header class="hud">
+        <div>
+          <p class="label">教學模式</p>
+          <h1>台股零股新手村：小資下單冒險</h1>
+          <p class="subtitle">6 個關卡專門教你零股下單，從術語到實作一次上手。</p>
+        </div>
+        <div class="score-box">
+          <p>分數</p>
+          <strong id="score">0</strong>
+          <small id="stage-indicator">第 1 / 6 關</small>
+          <small id="best-score">最佳紀錄：0</small>
+        </div>
+      </header>
+
+      <section class="progress-panel">
+        <div class="progress-meta">
+          <span>學習進度</span>
+          <span id="progress-text">0%</span>
+        </div>
+        <div class="progress-track">
+          <div id="progress-fill" class="progress-fill"></div>
+        </div>
+      </section>
+
+      <section class="stage-card" id="stage-card">
+        <p class="stage-tag" id="stage-tag">關卡 1</p>
+        <h2 id="question-title">準備中...</h2>
+        <p id="question-desc" class="question-desc"></p>
+        <div id="choices" class="choices"></div>
+        <p id="feedback" class="feedback"></p>
+        <div class="actions">
+          <button id="next-btn" disabled>下一關</button>
+          <button id="restart-btn" class="ghost">重新開始</button>
+        </div>
+      </section>
+
+      <section class="stats-grid">
+        <article class="guide-card card-anim">
+          <h3>任務日誌</h3>
+          <ul id="mission-log" class="mission-log">
+            <li>等待你完成第一題...</li>
+          </ul>
+        </article>
+        <article class="guide-card card-anim delay-1">
+          <h3>成就牆</h3>
+          <p id="badge-text" class="badge-text">尚未解鎖勳章</p>
+          <p id="attempt-text">挑戰次數：0</p>
+        </article>
+      </section>
+
+      <section class="guide-card card-anim delay-2">
+        <h3>零股模擬下單機</h3>
+        <p>輸入零股條件，計算買進估算成本（含手續費），練習小資部位控管。</p>
+        <form id="sim-form" class="sim-form">
+          <label>
+            股票代號
+            <input id="sim-symbol" type="text" value="2330" maxlength="6" required />
+          </label>
+          <label>
+            委託價格（元）
+            <input id="sim-price" type="number" min="1" step="0.1" value="950" required />
+          </label>
+          <label>
+            股數（1-999 股）
+            <input id="sim-shares" type="number" min="1" max="999" step="1" value="100" required />
+          </label>
+          <label>
+            可用預算（元）
+            <input id="sim-budget" type="number" min="1000" step="1000" value="150000" required />
+          </label>
+          <label>
+            交易時段
+            <select id="sim-session" required>
+              <option value="intraday">盤中零股（09:00-13:30）</option>
+              <option value="after">盤後零股（14:30 撮合）</option>
+            </select>
+          </label>
+          <button type="submit">計算成本</button>
+        </form>
+        <p id="sim-result" class="sim-result">尚未計算</p>
+      </section>
+
+      <section class="guide-card">
+        <h3>零股買進流程速記</h3>
+        <ol>
+          <li>開證券戶與交割戶</li>
+          <li>把資金轉入交割帳戶</li>
+          <li>在零股欄位輸入股號、價格、股數（1-999 股）</li>
+          <li>確認交易時段（盤中零股或盤後零股）再送出委託</li>
+          <li>成交後檢查庫存、均價與剩餘現金</li>
+          <li>持續分批，不追高，避免情緒化加碼</li>
+        </ol>
+        <p>這是教學模擬，不是投資建議。</p>
+      </section>
+
+      <section class="guide-card">
+        <h3>專有名詞與操作介紹</h3>
+        <p>點下方按鈕快速看懂常見名詞，再照右側步驟練一次。</p>
+        <div id="term-buttons" class="term-buttons">
+          <button type="button" class="term-btn active" data-term="oddlot">零股</button>
+          <button type="button" class="term-btn" data-term="limit">限價單</button>
+          <button type="button" class="term-btn" data-term="t2">T+2 交割</button>
+          <button type="button" class="term-btn" data-term="book">委買委賣</button>
+        </div>
+        <article id="term-detail" class="term-detail"></article>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
