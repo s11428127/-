@@ -1,59 +1,78 @@
 const stages = [
   {
-    title: "關卡 1：開戶任務",
-    desc: "你準備買第一張台股，第一步應該先做什麼？",
+    title: "關卡 1：零股啟程",
+    desc: "你只有 8,000 元，想先買台股，最適合先做哪件事？",
     choices: [
-      { text: "先去社群找明牌直接下單", correct: false, note: "還沒開戶前無法下單。" },
-      { text: "開立證券戶與交割戶", correct: true, note: "正確，這是買賣股票的基礎。" },
-      { text: "先把全部存款換成股票", correct: false, note: "先建立流程，再談資金配置。" }
+      { text: "先開立證券戶與交割戶", correct: true, note: "正確，零股與整股都需要先開戶。" },
+      { text: "先借錢湊一張再說", correct: false, note: "新手先練零股，不要急著借錢。" },
+      { text: "直接請朋友代買", correct: false, note: "應使用自己帳戶與風險控管。" }
     ]
   },
   {
-    title: "關卡 2：資金補給",
-    desc: "帳戶開好後，接下來要怎麼讓委託有機會成交？",
+    title: "關卡 2：零股規則",
+    desc: "下列哪一個是零股買進的正確描述？",
     choices: [
-      { text: "把錢轉進交割帳戶", correct: true, note: "正確，沒資金通常會導致交割失敗風險。" },
-      { text: "先借錢 All in", correct: false, note: "槓桿風險高，新手不建議。" },
-      { text: "不用入金，成交再補", correct: false, note: "流程錯誤，先備妥資金。" }
+      { text: "零股通常是 1-999 股，不到 1 張", correct: true, note: "正確，1 張是 1000 股。" },
+      { text: "零股等於零成本試單", correct: false, note: "零股也是真實交易，有風險。" },
+      { text: "零股只能買 ETF 不能買個股", correct: false, note: "多數上市櫃股票都可零股交易。" }
     ]
   },
   {
-    title: "關卡 3：下單指令",
-    desc: "你想買 2330，最完整的下單資訊是什麼？",
+    title: "關卡 3：下單欄位",
+    desc: "你要買 2330 的零股，下單時哪些資訊必填？",
     choices: [
-      { text: "只填股號，其他隨便", correct: false, note: "資訊不足，無法正確委託。" },
-      { text: "股號、價格、數量、買進別", correct: true, note: "正確，關鍵欄位都到位。" },
-      { text: "看漲就市價重壓", correct: false, note: "先理解風險與委託條件。" }
+      { text: "股號、限價、股數、買進", correct: true, note: "正確，核心欄位完整。" },
+      { text: "只要有股號，系統會自動補完", correct: false, note: "下單資訊不完整會失敗。" },
+      { text: "先填停損百分比就好", correct: false, note: "停損是策略，不是委託必要欄位。" }
     ]
   },
   {
-    title: "關卡 4：風險守門",
-    desc: "成交後最重要的習慣是什麼？",
+    title: "關卡 4：交易時段",
+    desc: "你想今天盤中就有機會成交零股，應優先選哪個時段？",
     choices: [
-      { text: "每天追高殺低", correct: false, note: "情緒化操作風險高。" },
-      { text: "檢查庫存、成本與停損規劃", correct: true, note: "正確，風險管理比猜漲跌更重要。" },
-      { text: "把密碼給朋友幫忙看盤", correct: false, note: "帳密安全不可外流。" }
+      { text: "盤中零股（09:00-13:30）", correct: true, note: "正確，盤中可依撮合規則嘗試成交。" },
+      { text: "盤後零股（14:30 撮合）", correct: false, note: "盤後是特定時間撮合。" },
+      { text: "等隔天開盤再看", correct: false, note: "你題目目標是今天盤中。" }
     ]
   },
   {
-    title: "關卡 5：技術面判讀",
-    desc: "看到股價連續三天急漲，你第一個反應應該是？",
+    title: "關卡 5：資金控管",
+    desc: "你預算 12,000 元，想買 700 元股票，較穩健是？",
     choices: [
-      { text: "怕錯過直接追高", correct: false, note: "先確認成交量與風險，不要只看漲幅。" },
-      { text: "先看量價與基本面，再決定是否分批", correct: true, note: "正確，先驗證再決策。" },
-      { text: "借錢加碼放大報酬", correct: false, note: "槓桿會放大虧損，新手應保守。" }
+      { text: "先買 10 股練流程，再視情況分批", correct: true, note: "正確，零股可用小部位練習。" },
+      { text: "一次梭哈到極限", correct: false, note: "要保留現金彈性。" },
+      { text: "先借錢買滿", correct: false, note: "新手先避免槓桿。" }
     ]
   },
   {
-    title: "關卡 6：資金控管",
-    desc: "若你總資金 30 萬，單一標的合理上限更接近哪個做法？",
+    title: "關卡 6：成交後檢查",
+    desc: "零股成交後，最應該先做哪件事？",
     choices: [
-      { text: "一次投入 30 萬，省時間", correct: false, note: "過度集中風險太高。" },
-      { text: "先以 5-10 萬試單，保留現金彈性", correct: true, note: "正確，分批與部位控管更穩健。" },
-      { text: "看新聞熱度決定全押", correct: false, note: "資訊雜訊多，紀律比情緒重要。" }
+      { text: "檢查成交均價、持股與剩餘預算", correct: true, note: "正確，先做交易後核對。" },
+      { text: "立刻再追一筆", correct: false, note: "先檢查再決策。" },
+      { text: "不看庫存，等漲停", correct: false, note: "缺乏風險管理。" }
     ]
   }
 ];
+
+const termMap = {
+  oddlot: {
+    title: "零股",
+    desc: "零股是 1 到 999 股的交易單位，適合小資族先用小金額練習流程。"
+  },
+  limit: {
+    title: "限價單",
+    desc: "你指定願意買進的最高價格，只有在市場價格符合時才可能成交。"
+  },
+  t2: {
+    title: "T+2 交割",
+    desc: "台股通常是交易日後第 2 個營業日完成交割，帳戶需備妥款項。"
+  },
+  book: {
+    title: "委買委賣",
+    desc: "委買是市場想買的價格與數量，委賣是想賣的價格與數量，觀察可幫助判斷流動性。"
+  }
+};
 
 const scoreEl = document.getElementById("score");
 const stageIndicator = document.getElementById("stage-indicator");
@@ -74,8 +93,11 @@ const simForm = document.getElementById("sim-form");
 const simResult = document.getElementById("sim-result");
 const simSymbol = document.getElementById("sim-symbol");
 const simPrice = document.getElementById("sim-price");
-const simLots = document.getElementById("sim-lots");
+const simShares = document.getElementById("sim-shares");
 const simBudget = document.getElementById("sim-budget");
+const simSession = document.getElementById("sim-session");
+const termButtons = document.querySelectorAll(".term-btn");
+const termDetail = document.getElementById("term-detail");
 
 let index = 0;
 let score = 0;
@@ -98,14 +120,22 @@ function addMissionLog(text) {
 
 function updateBadge() {
   if (bestScore === 100) {
-    badgeText.textContent = "已解鎖：冷靜交易員";
+    badgeText.textContent = "已解鎖：零股紀律王";
   } else if (bestScore >= 75) {
-    badgeText.textContent = "已解鎖：穩健新手";
+    badgeText.textContent = "已解鎖：零股穩健手";
   } else if (bestScore >= 50) {
-    badgeText.textContent = "已解鎖：流程探索者";
+    badgeText.textContent = "已解鎖：小資練習生";
   } else {
     badgeText.textContent = "尚未解鎖勳章";
   }
+}
+
+function renderTerm(termKey) {
+  const term = termMap[termKey];
+  if (!term) {
+    return;
+  }
+  termDetail.innerHTML = `<h4>${term.title}</h4><p>${term.desc}</p>`;
 }
 
 updateBadge();
@@ -184,8 +214,8 @@ function showEnding() {
   updateBadge();
 
   stageTag.textContent = "任務完成";
-  questionTitle.textContent = "恭喜通關！你已完成台股買進流程演練";
-  questionDesc.textContent = "記得：先流程、後資金、再策略；每一步都要有風險意識。";
+  questionTitle.textContent = "恭喜通關！你已完成零股下單流程演練";
+  questionDesc.textContent = "記得：先小部位練習，再逐步建立自己的紀律。";
   stageIndicator.textContent = `第 ${stages.length} / ${stages.length} 關`;
   progressFill.style.width = "100%";
   progressText.textContent = "100%";
@@ -193,11 +223,11 @@ function showEnding() {
   feedback.className = "feedback good";
 
   if (score === 100) {
-    feedback.textContent = "滿分！你拿到『冷靜交易員』勳章。";
+    feedback.textContent = "滿分！你拿到『零股紀律王』勳章。";
   } else if (score >= 67) {
-    feedback.textContent = "不錯！再玩一次可拿更高分。";
+    feedback.textContent = "不錯！你已具備零股實作基礎。";
   } else {
-    feedback.textContent = "先別急著下單，建議重玩一次熟悉流程。";
+    feedback.textContent = "建議重玩一次，把時段與交割概念再熟悉。";
   }
 
   nextBtn.disabled = true;
@@ -226,30 +256,41 @@ simForm.addEventListener("submit", (event) => {
 
   const symbol = simSymbol.value.trim().toUpperCase();
   const price = Number(simPrice.value);
-  const lots = Number(simLots.value);
+  const shares = Number(simShares.value);
   const budget = Number(simBudget.value);
+  const session = simSession.value;
 
-  if (!symbol || price <= 0 || lots <= 0 || budget <= 0) {
+  if (!symbol || price <= 0 || shares <= 0 || shares > 999 || budget <= 0) {
     simResult.className = "sim-result warn";
-    simResult.textContent = "請輸入有效的股票、價格、張數與預算。";
+    simResult.textContent = "請輸入有效的股票、價格、零股股數（1-999）與預算。";
     return;
   }
 
-  const shares = lots * 1000;
   const tradeAmount = price * shares;
   const fee = Math.max(20, Math.round(tradeAmount * 0.001425));
   const totalCost = tradeAmount + fee;
   const remain = budget - totalCost;
+  const sessionText = session === "intraday" ? "盤中零股" : "盤後零股";
 
   if (remain >= 0) {
     simResult.className = "sim-result ok";
-    simResult.textContent = `${symbol} 買進估算：成交 ${tradeAmount.toLocaleString()} 元，手續費 ${fee.toLocaleString()} 元，總成本 ${totalCost.toLocaleString()} 元，可用餘額 ${remain.toLocaleString()} 元。`;
-    addMissionLog(`模擬下單成功：${symbol} ${lots} 張，成本 ${totalCost.toLocaleString()} 元`);
+    simResult.textContent = `${symbol} ${sessionText} 買進估算：成交 ${tradeAmount.toLocaleString()} 元，手續費 ${fee.toLocaleString()} 元，總成本 ${totalCost.toLocaleString()} 元，可用餘額 ${remain.toLocaleString()} 元。`;
+    addMissionLog(`模擬下單成功：${symbol} ${shares} 股，成本 ${totalCost.toLocaleString()} 元`);
   } else {
     simResult.className = "sim-result warn";
-    simResult.textContent = `${symbol} 目前預算不足，尚差 ${Math.abs(remain).toLocaleString()} 元。建議調整張數或價格。`;
+    simResult.textContent = `${symbol} 目前預算不足，尚差 ${Math.abs(remain).toLocaleString()} 元。建議調整股數或價格。`;
     addMissionLog(`模擬下單失敗：${symbol} 預算不足 ${Math.abs(remain).toLocaleString()} 元`);
   }
 });
+
+termButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    termButtons.forEach((btn) => btn.classList.remove("active"));
+    button.classList.add("active");
+    renderTerm(button.dataset.term);
+  });
+});
+
+renderTerm("oddlot");
 
 renderStage();

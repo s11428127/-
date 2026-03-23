@@ -307,6 +307,14 @@ button.ghost {
   background: #fffcf5;
 }
 
+.sim-form select {
+  border: 2px solid #d4bc93;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 1rem;
+  background: #fffcf5;
+}
+
 .sim-form button {
   grid-column: 1 / -1;
   justify-self: start;
@@ -323,6 +331,40 @@ button.ghost {
 
 .sim-result.warn {
   color: var(--bad);
+}
+
+.term-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 10px 0;
+}
+
+.term-btn {
+  background: #f2e0bf;
+  color: #4a2d1f;
+  border: 2px solid transparent;
+}
+
+.term-btn.active {
+  border-color: #8a4719;
+  background: #ffd590;
+}
+
+.term-detail {
+  border: 2px solid #e4c99f;
+  border-radius: 12px;
+  padding: 12px;
+  background: #fffef9;
+}
+
+.term-detail h4 {
+  margin: 0 0 6px;
+}
+
+.term-detail p {
+  margin: 0;
+  color: #3a2718;
 }
 
 @keyframes rise-in {
